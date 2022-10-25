@@ -9,6 +9,10 @@ import './Header.css';
 import logo from './../Header/NavImg/logo.jpg'
 
 const Header = () => {
+
+
+
+
     return (
         <Navbar expand="lg" bg="dark"   variant="dark">
         <Container fluid >
@@ -16,7 +20,7 @@ const Header = () => {
         <div>
 
             <img   
-              src={logo}
+              src={logo} 
               width="50"
               height="50"
               className="d-inline-block align-top me-2 rounded"
@@ -45,8 +49,8 @@ const Header = () => {
               </Nav>
   
               <Form className="d-flex me-2 ">
-              <Link to='/login'>  <Button className='me-2' variant="outline-success">Log in</Button> </Link>
-              <Link to='/register'>   <Button variant="outline-warning">Register</Button> </Link>
+              <Link to='/login'>  <Button  className='me-2' variant="outline-success">Log in</Button> </Link>
+              <Link to='/register'> <Button variant="outline-warning">Register</Button> </Link>
               </Form>
 
           </Navbar.Collapse>

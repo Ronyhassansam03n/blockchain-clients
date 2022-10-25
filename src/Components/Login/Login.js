@@ -5,9 +5,31 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './Login.css'
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
+
 
 
 const Login = () => {
+
+        const {providerLogin} = useContext(AuthContext)
+
+ const googleProviderSignIn = new GoogleAuthProvider()
+
+  const LoginHandle = () => {
+
+   providerLogin(googleProviderSignIn) 
+   
+   .then(result =>{
+    const user = result.user
+    console.log(user)
+   })
+
+   .catch( error => console.error(error))
+
+ }
+
     return (
         
         <Card className='w-50 m-auto mt-5 ' >
@@ -40,13 +62,14 @@ const Login = () => {
 
         <h5 className='login-title'> Login with </h5>
 
-        <Button  className='mb-3 d-block m-auto' variant="outline-danger" type="submit">
-         Log in via Google  <FaGoogle></FaGoogle>
+        <Button  onClick={LoginHandle} className='mb-3 d-block m-auto' variant="outline-danger" type="submit">
+        <FaGoogle></FaGoogle> Log in via Google  
         </Button>
         <Button  className='mb-3' variant="outline-dark" type="submit">
-         Log in via Github <FaGithub></FaGithub>
+        <FaGithub></FaGithub> Log in via Github  
         </Button>
       </Form>
+     
       </Card>
     );
 };
