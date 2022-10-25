@@ -2,33 +2,63 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import {  Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 
 const Register = () => {
+
+const {createUser} = useContext(AuthContext)
+
+        const handleSubmit = event =>{
+                event.preventDefault();
+                const form = event.target;
+                const name = form.name.value;
+                const photoURL = form.photoURL.value;
+                const email = form.email.value;
+                const password = form.password.value;
+                console.log(name, photoURL, email, password);
+
+                createUser(email, password)
+                .then( result =>{
+                        const user = result.user;
+                        console.log(user)
+                })
+                .catch(error => console.error(error))
+        }
+
+
     return (
+        
 
         <Card className='w-50 m-auto mt-5 ' >
-        <Form >
+
+                 <h3 className='text-danger'> Please Register Your Account</h3>
+
+
+        <Form  onSubmit={handleSubmit}>
 
         <Form.Group className="mb-3  m-auto w-50" controlId="formBasicEmail">
 
                 <Form.Label>Full Name</Form.Label>
 
-                <Form.Control type="text" placeholder="Enter Your Name" required />
+                <Form.Control  name='name' type="text" placeholder="Enter Your Name" required />
           
         </Form.Group>
+
         <Form.Group className="mb-3  m-auto w-50" controlId="formBasicEmail">
 
                 <Form.Label>Photo URL</Form.Label>
 
-                <Form.Control type="text" placeholder="Enter Your URL" required />
+                <Form.Control name='photoURL' type="text" placeholder="Enter Your URL"  />
           
         </Form.Group>
+
         <Form.Group className="mb-  m-auto w-50" controlId="formBasicEmail">
 
                 <Form.Label>Email address</Form.Label>
 
-                <Form.Control type="email" placeholder="Enter Your Email" required />
+                <Form.Control name='email' type="email" placeholder="Enter Your Email" required />
           
         </Form.Group>
   
@@ -36,7 +66,7 @@ const Register = () => {
 
                  <Form.Label>Password</Form.Label>
 
-                 <Form.Control type="password" placeholder=" Enter Your Password" required />
+                 <Form.Control name='password' type="password" placeholder=" Enter Your Password" required />
 
         </Form.Group>
         

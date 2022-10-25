@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {  Link, NavLink } from 'react-router-dom';
@@ -48,10 +47,10 @@ const handelLogOut = () => {
 
                 <div className='me-5 '>
 
-                <NavLink className='me-2 navLink' to='/'> HOME</NavLink>
-                <NavLink className='me-2 navLink' to='/course'> COURSES</NavLink>
-                <NavLink className='me-2 navLink' to='/faq'> FAQ</NavLink>
-                <NavLink className='me-2 navLink' to='/blog'> BLOG</NavLink>
+                <NavLink className='me-4 navLink' to='/'> HOME</NavLink>
+                <NavLink className='me-4 navLink' to='/course'> COURSES</NavLink>
+                <NavLink className='me-4 navLink' to='/faq'> FAQ</NavLink>
+                <NavLink className='me-4 navLink' to='/blog'> BLOG</NavLink>
 
                 </div>
                 
