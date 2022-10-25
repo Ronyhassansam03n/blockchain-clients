@@ -10,27 +10,24 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 
-
 const Login = () => {
+        const {providerLogin} = useContext(AuthContext);
 
-        const {providerLogin} = useContext(AuthContext)
+        const googleProvider = new GoogleAuthProvider()
 
- const googleProviderSignIn = new GoogleAuthProvider()
+        const loginHandle = () =>{
 
-  const LoginHandle = () => {
+                 providerLogin(googleProvider)
+                 .then(result =>{
+                        const user = result.user;
+                        console.log(user);
+                 })
 
-   providerLogin(googleProviderSignIn) 
-   
-   .then(result =>{
-    const user = result.user
-    console.log(user)
-   })
+                 .catch(error => console.error(error))
+        }
 
-   .catch( error => console.error(error))
 
- }
-
-    return (
+        return (
         
         <Card className='w-50 m-auto mt-5 ' >
         <Form >
@@ -53,7 +50,7 @@ const Login = () => {
         
 
 
-{/*  LOG IN button */}
+
 
         <Button  className='mb-2' variant="outline-primary" type="submit">
          Log in
@@ -62,7 +59,7 @@ const Login = () => {
 
         <h5 className='login-title'> Login with </h5>
 
-        <Button  onClick={LoginHandle} className='mb-3 d-block m-auto' variant="outline-danger" type="submit">
+        <Button onClick={loginHandle}  className='mb-3 d-block m-auto' variant="outline-danger" type="submit">
         <FaGoogle></FaGoogle> Log in via Google  
         </Button>
         <Button  className='mb-3' variant="outline-dark" type="submit">

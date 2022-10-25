@@ -7,14 +7,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import {  Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from './../Header/NavImg/logo.jpg'
+import { useContext } from 'react';
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import { Image } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
-
-
+const {user} = useContext(AuthContext)
 
     return (
-        <Navbar expand="lg" bg="dark"   variant="dark">
+        <Navbar expand="lg" bg="dark" variant="dark">
         <Container fluid >
 
         <div>
@@ -28,6 +31,22 @@ const Header = () => {
             />
 
         <Link to='/'><Navbar.Brand className="d-inline-block">Blockchain Education</Navbar.Brand> </Link>
+
+        </div>
+
+
+        <div className='d-flex'>
+              <p className='text-white'> Welcome to Blockchain course, {user?.displayName}</p>
+
+             { user?.photoURL?
+              <Image className='' style={{ height : '25px'}} roundedCircle src={user?.photoURL}></Image>
+             :
+             <FaUser></FaUser>
+            }
+             
+            
+            
+
 
         </div>
 
