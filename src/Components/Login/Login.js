@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './Login.css'
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
@@ -40,10 +41,10 @@ const Login = () => {
         <h5 className='login-title'> Login with </h5>
 
         <Button  className='mb-3 d-block m-auto' variant="outline-danger" type="submit">
-         Log in via Google
+         Log in via Google  <FaGoogle></FaGoogle>
         </Button>
         <Button  className='mb-3' variant="outline-dark" type="submit">
-         Log in via Github
+         Log in via Github <FaGithub></FaGithub>
         </Button>
       </Form>
       </Card>
