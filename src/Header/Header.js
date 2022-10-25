@@ -14,8 +14,14 @@ import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
-const {user} = useContext(AuthContext)
+const {user, logOut} = useContext(AuthContext)
 
+const handelLogOut = () => {
+  logOut()
+  .then ( () => {})
+  .catch (error => console.error(error))
+
+}
     return (
         <Navbar expand="lg" bg="dark" variant="dark">
         <Container fluid >
@@ -35,21 +41,6 @@ const {user} = useContext(AuthContext)
         </div>
 
 
-        <div className='d-flex'>
-              <p className='text-white'> Welcome to Blockchain course, {user?.displayName}</p>
-
-             { user?.photoURL?
-              <Image className='' style={{ height : '25px'}} roundedCircle src={user?.photoURL}></Image>
-             :
-             <FaUser></FaUser>
-            }
-             
-            
-            
-
-
-        </div>
-
        <div>
        <Navbar.Collapse id="navbarScroll">
 
@@ -67,18 +58,41 @@ const {user} = useContext(AuthContext)
   
               </Nav>
   
-              <Form className="d-flex me-2 ">
-              <Link to='/login'>  <Button  className='me-2' variant="outline-success">Log in</Button> </Link>
-              <Link to='/register'> <Button variant="outline-warning">Register</Button> </Link>
-              </Form>
+              
 
           </Navbar.Collapse>
 
        </div>
 
-        </Container>
-      </Navbar>
-    )
-};
+       
+       <div className='d-flex'>
+
+        { 
+        user?.uid ?
+        <>
+          <span className='text-white me-3'> Welcome to Blockchain course, {user?.displayName}</span>
+          <Button  onClick= {handelLogOut} className='me-5 ' variant="outline-light">LogOut</Button>
+        </>
+          :
+          <>
+         
+            <Link to='/login'>  <Button  className='me-2' variant="outline-success">Log in</Button> </Link>
+            <Link to='/register'> <Button variant="outline-warning">Register</Button> </Link>
+            
+          </>
+        }
+
+           { user?.photoURL ?
+            <Image className='' style={{ height : '25px'}} roundedCircle src={user?.photoURL}></Image>
+           :
+           <FaUser></FaUser>
+          } 
+        
+        </div>
+        
+               </Container>
+              </Navbar>
+            )
+        };
 
 export default Header;
