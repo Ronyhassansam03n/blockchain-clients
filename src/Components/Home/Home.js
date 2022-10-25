@@ -4,8 +4,7 @@ import './Home.css'
 
 const Home = () => {
     return (
-        <div className='d-flex d-mb-col  me-5 m-5'>
-
+        <div className='d-flex  me-5 m-5'>
 
 
             <div >

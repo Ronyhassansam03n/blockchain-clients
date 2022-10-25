@@ -23,7 +23,7 @@ const Header = () => {
               alt=""
             />
 
-        <Navbar.Brand  className="d-inline-block " href="#">Blockchain Education</Navbar.Brand>
+        <Link to='/'><Navbar.Brand className="d-inline-block">Blockchain Education</Navbar.Brand> </Link>
 
         </div>
 
