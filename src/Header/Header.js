@@ -4,21 +4,22 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {  NavLink } from 'react-router-dom';
+import {  Link, NavLink } from 'react-router-dom';
 import './Header.css';
+import logo from './../Header/NavImg/logo.jpg'
 
 const Header = () => {
     return (
-        <Navbar bg="dark" expand="lg"  variant="dark">
+        <Navbar expand="lg" bg="dark"   variant="dark">
         <Container fluid >
 
         <div>
 
             <img   
-              src={'./../NavImg/logo.jpg'}
+              src={logo}
               width="50"
               height="50"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top me-2 rounded"
               alt=""
             />
 
@@ -44,8 +45,8 @@ const Header = () => {
               </Nav>
   
               <Form className="d-flex me-2 ">
-                <Button className='me-2' variant="outline-success">Log in</Button>
-                <Button variant="outline-warning">Register</Button>
+              <Link to='/login'>  <Button className='me-2' variant="outline-success">Log in</Button> </Link>
+              <Link to='/register'>   <Button variant="outline-warning">Register</Button> </Link>
               </Form>
 
           </Navbar.Collapse>
