@@ -27,7 +27,7 @@ useEffect( () => {
 
                 categories.map(category => <p key={category.id}>
 
-                <Link>  <Button variant="outline-dark"> {category.name}  </Button>   </Link>
+                <Link to={`/category/${category.id}`}>  <Button variant="outline-dark"> {category.name}  </Button>   </Link>
 
                 </p>)
 
