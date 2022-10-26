@@ -22,7 +22,7 @@ const Course = () => {
 
                 <Col lg="9">
 
-                    <RightNav></RightNav>
+                <RightNav></RightNav>
                  
                 </Col>
 
