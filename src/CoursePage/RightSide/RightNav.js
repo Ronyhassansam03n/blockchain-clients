@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './Rigth.css'
 
 const RightNav = () => {
 
@@ -21,28 +22,22 @@ const RightNav = () => {
          
                 {
 
-                  courses.map(subject => <div key={subject._id}> 
+                  courses.map(subject => <Card  key={subject._id} style={{ width: '18rem', width : '500px'}} className=' mt-5  m-auto '>
 
-               
-
-<div>
-
-<Card style={{ width: '18rem' }} className=' mt-5 '>
       <Card.Img variant="top" src={subject.thumbnail_url} />
-      <Card.Body>
+      <Card.Body >
         <Card.Title>{subject.header}</Card.Title>
         <Card.Text>
          {subject.title}
         </Card.Text>
         <Button variant="dark">Buy Now</Button>
       </Card.Body>
-    </Card>
-
-</div>
-
-                  </div> )                
+    </Card>)                
 
                 }
+
+
+
 
         </div>
     );
