@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithPopup, signOut, } from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase.config';
 import { useState, useEffect } from 'react';
 
@@ -13,26 +13,37 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
 
-    const  providerLogin = (provider) =>{
+    const  providerLogin = (provider) => {
         return signInWithPopup(auth, provider)
 
     }
-    const createUser = (email, password) =>{
+
+
+    const providerGithub = (provider) => {
+        return signInWithPopup(auth, provider)
+
+    }
+
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const logOut = () =>{
+    const signIn = (email, password) =>{
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const logOut = () => {
         return signOut(auth);
     }
   
 
-  useEffect( ( ) => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
+  useEffect ( ( ) => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log( 'user', currentUser)
             setUser(currentUser)
         });
 
-        return () =>{
+        return () => {
             unsubscribe();
         }
          
@@ -42,7 +53,7 @@ const AuthProvider = ({children}) => {
 
 
 
-    const authInfo = { user, providerLogin, logOut, createUser };
+    const authInfo = { user, providerLogin, logOut, createUser, signIn, providerGithub};
     return (
         
         <AuthContext.Provider value={authInfo}>

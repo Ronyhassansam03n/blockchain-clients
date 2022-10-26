@@ -16,6 +16,7 @@ const Header = () => {
 const {user, logOut} = useContext(AuthContext)
 
 const handelLogOut = () => {
+
   logOut()
   .then ( () => {})
   .catch (error => console.error(error))
@@ -67,9 +68,10 @@ const handelLogOut = () => {
        <div className='d-flex'>
 
         { 
-        user?.uid ?
+
+        user?.uid?
         <>
-          <span className='text-white me-3'> Welcome to Blockchain course, {user?.displayName}</span>
+          <span className='text-white me-3'> Welcome to Blockchain course {user?.displayName}</span>
           <Button  onClick= {handelLogOut} className='me-5 ' variant="outline-light">LogOut</Button>
         </>
           :
@@ -82,7 +84,7 @@ const handelLogOut = () => {
         }
 
            { user?.photoURL ?
-            <Image className='' style={{ height : '25px'}} roundedCircle src={user?.photoURL}></Image>
+            <Image className='' style={{ height : '25px'}} roundedCircle src={user.photoURL}></Image>
            :
            <FaUser></FaUser>
           } 

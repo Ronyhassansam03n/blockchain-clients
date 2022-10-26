@@ -22,7 +22,8 @@ const {createUser} = useContext(AuthContext)
                 createUser(email, password)
                 .then( result =>{
                         const user = result.user;
-                        console.log(user)
+                        console.log(user);
+                        form.reset();
                 })
                 .catch(error => console.error(error))
         }
@@ -42,7 +43,7 @@ const {createUser} = useContext(AuthContext)
 
                 <Form.Label>Full Name</Form.Label>
 
-                <Form.Control  name='name' type="text" placeholder="Enter Your Name" required />
+                <Form.Control  name='name' type="text" placeholder="Enter Your Name"  />
           
         </Form.Group>
 
@@ -50,8 +51,7 @@ const {createUser} = useContext(AuthContext)
 
                 <Form.Label>Photo URL</Form.Label>
 
-                <Form.Control name='photoURL' type="text" placeholder="Enter Your URL"  />
-          
+                <Form.Control name='photoURL' type="text" placeholder="Enter Your URL" />
         </Form.Group>
 
         <Form.Group className="mb-  m-auto w-50" controlId="formBasicEmail">
@@ -59,7 +59,6 @@ const {createUser} = useContext(AuthContext)
                 <Form.Label>Email address</Form.Label>
 
                 <Form.Control name='email' type="email" placeholder="Enter Your Email" required />
-          
         </Form.Group>
   
         <Form.Group className="mb-3  m-auto w-50" controlId="formBasicPassword">
