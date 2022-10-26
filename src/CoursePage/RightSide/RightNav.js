@@ -22,7 +22,7 @@ const RightNav = () => {
          
                 {
 
-                  courses.map(subject => <Card  key={subject._id} style={{ width: '18rem', width : '500px'}} className=' mt-5  m-auto '>
+                  courses.map(subject => <Card  key={subject._id} style={{ width : '500px'}} className=' mt-5  m-auto mb-5 '>
 
       <Card.Img variant="top" src={subject.thumbnail_url} />
       <Card.Body >
