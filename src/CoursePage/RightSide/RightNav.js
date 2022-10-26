@@ -10,7 +10,7 @@ const RightNav = () => {
 
     useEffect ( () =>{
 
-        fetch('http://localhost:5000/all-course')
+        fetch(' https://blockchain-course-server.vercel.app/all-course')
         .then(res => res.json())
         .then(data => setCourses(data))
 

@@ -9,30 +9,30 @@ const LeftNav = () => {
 
     const [categories, setCategories] = useState([])
 
-useEffect( () => {
+    useEffect(() => {
 
-    fetch('http://localhost:5000/course-categories')
-    .then(res => res.json())
-    .then( data => setCategories(data))
+        fetch(' https://blockchain-course-server.vercel.app/course-categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
 
-}, [])
+    }, [])
 
     return (
 
-        <Card  className='bg-light' style={{marginTop : '70px' }}>
-        <div>
+        <Card className='bg-light' style={{ marginTop: '70px' }}>
+            <div>
 
-        <h2 className='text-success' style={{marginBottom : '20px' }} > All Categories</h2>
-          {
+                <h2 className='text-success' style={{ marginBottom: '20px' }} > All Categories</h2>
+                {
 
-                categories.map(category => <p key={category.id}>
+                    categories.map(category => <p key={category.id}>
 
-                <Link to={`/category/${category.id}`}>  <Button variant="outline-dark"> {category.name}  </Button>   </Link>
+                        <Link to={`/category/${category.id}`}>  <Button variant="outline-dark"> {category.name}  </Button>   </Link>
 
-                </p>)
+                    </p>)
 
-          }
-        </div>
+                }
+            </div>
         </Card>
     );
 };
