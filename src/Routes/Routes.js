@@ -37,7 +37,8 @@ export const routes = createBrowserRouter([
 
                 {
                         path:'/checkout',
-                        element: <CheckOut></CheckOut>
+                        element: <CheckOut></CheckOut>, 
+                 
                 },
                 
                 {

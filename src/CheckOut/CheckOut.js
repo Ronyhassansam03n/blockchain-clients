@@ -1,9 +1,21 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 const CheckOut = () => {
+
+
     return (
         <div>
-             <h1> this is check out area</h1>
+            <Card className='m-auto mt-5' style={{ width: '40rem' }}>
+                <Card.Body>
+                    <h4 className='mb-5'>Thank you for Using this course.</h4>
+
+                    <Button variant="outline-success"> Payment Processed</Button>
+                </Card.Body>
+            </Card>
+
         </div>
     );
 };

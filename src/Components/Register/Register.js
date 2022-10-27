@@ -4,9 +4,11 @@ import {  Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { useState } from 'react';
 
 
 const Register = () => {
+const [error, setError] =useState('')
 
 const {createUser} = useContext(AuthContext)
 
@@ -23,9 +25,14 @@ const {createUser} = useContext(AuthContext)
                 .then( result =>{
                         const user = result.user;
                         console.log(user);
+                        setError('');
                         form.reset();
                 })
-                .catch(error => console.error(error))
+                .catch(error =>{ 
+                        
+                        console.error(error);
+                        setError(error.message);
+                })
         }
 
 
@@ -76,6 +83,11 @@ const {createUser} = useContext(AuthContext)
         <Button  className='mb-2' variant="outline-primary" type="submit">
         Register
         </Button>
+
+        <Form.Text className='text-danger'>
+         {error}
+        </Form.Text>
+        
         <p> Already have an account<Link to='/login'> Log in</Link></p>
       </Form>
       </Card>

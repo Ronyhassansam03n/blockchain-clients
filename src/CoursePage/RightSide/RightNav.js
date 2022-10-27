@@ -6,44 +6,44 @@ import './Rigth.css'
 
 const RightNav = () => {
 
-    const [courses, setCourses] = useState([])
+  const [courses, setCourses] = useState([])
 
 
-    useEffect ( () =>{
+  useEffect(() => {
 
-        fetch(' https://blockchain-course-server.vercel.app/all-course')
-        .then(res => res.json())
-        .then(data => setCourses(data))
+    fetch(' https://blockchain-course-server.vercel.app/all-course')
+      .then(res => res.json())
+      .then(data => setCourses(data))
 
-    },[])
+  }, [])
 
-    return (
+  return (
 
-        <div className='container '>
-         
-                {
+    <div className='container '>
 
-                  courses.map(subject => <Card  key={subject._id} style={{ width : '500px'}} className=' mt-5  m-auto mb-5 '>
+      {
 
-      <Card.Img variant="top" src={subject.thumbnail_url} />
-      <Card.Body >
-        <Card.Title>{subject.header}</Card.Title>
-        <Card.Text>
-         {subject.title}
-        </Card.Text>
+        courses.map(subject => <Card key={subject._id} style={{ width: '500px' }} className=' mt-5  m-auto mb-5 '>
 
-       <Link to='/checkout'> <Button variant="dark">Buy Now</Button> </Link>
+          <Card.Img variant="top" src={subject.thumbnail_url} />
+          <Card.Body >
+            <Card.Title>{subject.header}</Card.Title>
+            <Card.Text>
+              {subject.title}
+            </Card.Text>
 
-      </Card.Body>
-    </Card>)                
+            <Link to='/checkout'> <Button variant="dark">Buy Now</Button> </Link>
 
-                }
+          </Card.Body>
+        </Card>)
 
-
+      }
 
 
-        </div>
-    );
+
+
+    </div>
+  );
 };
 
 export default RightNav;
