@@ -11,6 +11,8 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
 
+
+
 const Header = () => {
 
   const { user, logOut } = useContext(AuthContext)
@@ -54,6 +56,7 @@ const Header = () => {
                 <NavLink className='me-4 navLink' to='/course'> COURSES</NavLink>
                 <NavLink className='me-4 navLink' to='/faq'> FAQ</NavLink>
                 <NavLink className='me-4 navLink' to='/blog'> BLOG</NavLink>
+                <NavLink className='me-4 navLink' to='/about'> About Us</NavLink>
 
               </div>
 
@@ -71,9 +74,9 @@ const Header = () => {
 
           {
 
-            user?.uid ?
+            user ?
               <>
-                <span className='text-white me-3'> Welcome to Blockchain course {user.displayName}</span>
+                <span className='text-white me-3'> Welcome to Blockchain course {user?.displayName}</span>
                 <Button onClick={handelLogOut} className='me-5 ' variant="outline-light">LogOut</Button>
               </>
               :
@@ -86,7 +89,8 @@ const Header = () => {
           }
 
           {user?.photoURL ?
-            <Image className='' style={{ height: '25px' }} roundedCircle src={user.photoURL}></Image>
+
+              <Image style={{ height: '25px' }} roundedCircle src={user.photoURL}></Image>
             :
             <FaUser></FaUser>
           }
