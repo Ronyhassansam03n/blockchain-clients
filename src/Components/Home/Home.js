@@ -17,10 +17,9 @@ const Home = () => {
                 <h4 className='text-danger '> " We are at the beginning of a global wave of demand for blockchain academic and professional education and certification. We are  offering the first Master of Science degree in Blockchain and Digital Currency, available to students worldwide through an online  since 2022. The programme is hosted by the Great & Friendly Teacher's. "</h4>
             </div>
 
-
-            <div >
+            <div  >
+                
                <img 
-               className='block-b rounded'
                src={Block02}alt="" 
                />
             </div>

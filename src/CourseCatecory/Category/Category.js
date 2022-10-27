@@ -24,7 +24,7 @@ const Category = () => {
 
             < h3 className='mt-5 mb-5 text-success '>" {title} "</h3>
 
-            <Image rounded className='w-50 mb-5' src={image_url}></Image>
+            <Image rounded className='w-50 mb-5 m-auto' src={image_url}></Image>
 
             <h4 className='w-50 m-auto mb-5' > {details}</h4>
 
