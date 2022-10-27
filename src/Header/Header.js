@@ -8,7 +8,7 @@ import './Header.css';
 import logo from './../Header/NavImg/logo.jpg'
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-import { Image } from 'react-bootstrap';
+import { Image, ModalFooter } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
 
 
@@ -100,6 +100,7 @@ const Header = () => {
 
       </Container>
     </Navbar>
+
   )
 };
 
