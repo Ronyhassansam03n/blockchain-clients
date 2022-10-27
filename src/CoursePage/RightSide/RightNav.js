@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 import './Rigth.css'
 
 const RightNav = () => {
@@ -30,7 +31,9 @@ const RightNav = () => {
         <Card.Text>
          {subject.title}
         </Card.Text>
-        <Button variant="dark">Buy Now</Button>
+
+       <Link to='/checkout'> <Button variant="dark">Buy Now</Button> </Link>
+
       </Card.Body>
     </Card>)                
 

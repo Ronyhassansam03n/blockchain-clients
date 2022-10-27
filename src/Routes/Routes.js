@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import CheckOut from "../CheckOut/CheckOut";
 import Blog from "../Components/Blog/Blog";
 import Course from "../Components/Courses/Course";
 import Faq from "../Components/Faq/Faq";
@@ -32,6 +33,11 @@ export const routes = createBrowserRouter([
                     path: '/category/:id',
                     element: <Category></Category>,
                     loader: ({ params }) => fetch(` https://blockchain-course-server.vercel.app/courses/${params.id}`)
+                },
+
+                {
+                        path:'/checkout',
+                        element: <CheckOut></CheckOut>
                 },
                 
                 {
