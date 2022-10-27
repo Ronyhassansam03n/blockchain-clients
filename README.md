@@ -1,7 +1,7 @@
 # Getting Started with Blockchain Course
 
-Website name : Blockchain course
-Website live link : 
+#  Website name : Blockchain course
+# Website live link : 
 
 ### Features and Functionality
 
@@ -17,7 +17,7 @@ Website live link :
   5. GO LANG
   6. JAVA SCRIPT
 
-  BY THOSE PROGRAMING LANGUAGES WE TRY TO GIVE A ROAD MAP OF BLCOKCHAIN DEVLOPMENT !!!
+  # BY THOSE PROGRAMING LANGUAGES WE TRY TO GIVE A ROAD MAP OF BLCOKCHAIN DEVLOPMENT !!!
 
   *** Functionality ***
 
