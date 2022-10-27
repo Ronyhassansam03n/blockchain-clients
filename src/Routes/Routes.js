@@ -9,6 +9,7 @@ import Register from "../Components/Register/Register";
 import Category from "../CourseCatecory/Category/Category";
 
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -37,8 +38,7 @@ export const routes = createBrowserRouter([
 
                 {
                         path:'/checkout',
-                        element: <CheckOut></CheckOut>, 
-                 
+                        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
                 },
                 
                 {

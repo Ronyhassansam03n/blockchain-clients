@@ -73,7 +73,7 @@ const Header = () => {
 
             user?.uid ?
               <>
-                <span className='text-white me-3'> Welcome to Blockchain course {user?.displayName}</span>
+                <span className='text-white me-3'> Welcome to Blockchain course {user.displayName}</span>
                 <Button onClick={handelLogOut} className='me-5 ' variant="outline-light">LogOut</Button>
               </>
               :

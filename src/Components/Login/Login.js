@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './Login.css'
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -18,6 +18,10 @@ const Login = () => {
         const [error, setError] = useState('')
         const { providerLogin, signIn, providerGithub } = useContext(AuthContext);
         const navigate = useNavigate();
+        const location = useLocation();
+
+        const from = location.state?.from?.pathname || '/' 
+
 
         const googleProvider = new GoogleAuthProvider()
         const githubProvider = new GithubAuthProvider()
@@ -28,7 +32,7 @@ const Login = () => {
                         .then(result => {
                                 const user = result.user;
                                 console.log(user);
-                                navigate('/')
+                                navigate(from, {replace: true})
                         })
 
                         .catch(error => console.error(error))
@@ -46,8 +50,7 @@ const Login = () => {
                                 console.log(user);
                                 form.reset();
                                 setError('');
-                                navigate('/')
-
+                               navigate(from, {replace: true})
                         })
                         .catch(error => {
 
@@ -62,7 +65,7 @@ const Login = () => {
                         .then(result => {
                                 const user = result.user;
                                 console.log(user);
-                                navigate('/')
+                                navigate(from, {replace: true})
                         })
 
                         .catch(error => console.error(error))
