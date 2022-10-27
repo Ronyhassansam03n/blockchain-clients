@@ -1,11 +1,11 @@
 # Getting Started with Blockchain Course
 
-#  Website name : Blockchain course
-# Website live link : 
+###  Website name : Blockchain course
+### Website live link : 
 
-### Features and Functionality
+# Features and Functionality
 
-*** Features ***
+### Features 
 
 * THIS WEBSITE IS A EDUCATION PLATFORM
   THIS WEBSITE CONTAIN ABOUT SIX COURSE
@@ -19,7 +19,7 @@
 
   # BY THOSE PROGRAMING LANGUAGES WE TRY TO GIVE A ROAD MAP OF BLCOKCHAIN DEVLOPMENT !!!
 
-  *** Functionality ***
+  ### Functionality 
 
   *  THIS WEBSITE HAVE 5 ROUTES 
 
@@ -29,11 +29,12 @@
     4. FAQ - SOME INFORMATION ABOUT THIS SITE 
     5. ABOUT - 404 SITE WITH GO BACK FUNCTION
 
-    *** WE USE FRMAEWPRK ***
+    ### WE USE FRMAEWPRK 
 
     1. BOOTSTRAP
     3. REACT BOOTSTRAP
 
-    *** PAYMENY SYSTEM ***
+    ### PAYMENY SYSTEM 
+
     HAVE A PAYMENT SYSTEM 
     
